@@ -113,3 +113,11 @@ for e_s in [1, 0.5, 0.1, 0.05, 0.01]:
     std = np.std(k,axis=0)
     plt.plot(u_x, meam, label='scale='+str(e_scale))
     plt.fill_between(u_x, meam-std, meam+std,alpha=.4)
+
+for key in k_record.keys():
+    k = k_record[key]
+    k = np.array(k).T/np.max(k)
+    meam = np.mean(k,axis=0)
+    std = np.std(k,axis=0)
+    plt.plot(u_x, meam, label='scale='+str(e_scale))
+    plt.fill_between(u_x, meam-std, meam+std,alpha=.4)
